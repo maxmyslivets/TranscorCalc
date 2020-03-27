@@ -1,0 +1,158 @@
+<Home>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        BoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            padding: '60dp', '20dp', '60dp', '0dp'
+            MDLabel:
+                text: 'Координаты в СК 1 на дату:'
+
+        BoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: '10dp'
+            padding: '60dp', '10dp', '60dp', '0dp'
+
+            MDTextField:
+                id: x0
+                hint_text: "X, м"
+                text: '2845456.081'
+            MDTextField:
+                id: y0
+                hint_text: "Y, м"
+                text: '2160954.245'
+            MDTextField:
+                id: z0
+                hint_text: "Z, м"
+                text: '5265993.223'
+            MDTextField:
+                id: t0
+                hint_text: "t, гггг-мм-дд"
+                text: '2005-01-01'
+        
+        MDSeparator:
+        
+        BoxLayout:
+
+            FloatLayout:
+                BoxLayout:
+                    size_hint_y: None
+                    height: self.minimum_height
+                    pos_hint: {'top': 1, 'left': 1}
+                    orientation: 'vertical'
+                    padding: '60dp', '30dp', '10dp', '10dp'
+
+                    BoxLayout:
+                        padding: '0dp', '0dp', '0dp', '10dp'
+                        MDLabel:
+                            text: 'Параметры перехода на дату:'
+
+                    MDTextField:
+                        id: tp
+                        hint_text: "t, гггг-мм-дд"
+                        text: '2010-01-01'
+                    MDTextField:
+                        id: dx
+                        hint_text: "dX, метр"
+                        text: '0.003'
+                    MDTextField:
+                        id: dy
+                        hint_text: "dY, метр"
+                        text: '0.001'
+                    MDTextField:
+                        id: dz
+                        hint_text: "dZ, метр"
+                        text: '0'
+                    MDTextField:
+                        id: wx
+                        hint_text: "wX, угловая секунда"
+                        text: '0.000019'
+                    MDTextField:
+                        id: wy
+                        hint_text: "wY, угловая секунда"
+                        text: '-0.000042'
+                    MDTextField:
+                        id: wz
+                        hint_text: "wZ, угловая секунда"
+                        text: '0.000002'
+                    MDTextField:
+                        id: m
+                        hint_text: "m, единица"
+                        text: '0.001'
+            
+            MDSeparator:
+                orientation: 'vertical'
+            
+            BoxLayout:
+                orientation: 'vertical'
+                FloatLayout:
+                    BoxLayout:
+                        size_hint_y: None
+                        height: self.minimum_height
+                        pos_hint: {'top': 1, 'right': 1}
+                        orientation: 'vertical'
+                        padding: '10dp', '30dp', '60dp', '10dp'
+
+                        BoxLayout:
+                            padding: '0dp', '0dp', '0dp', '10dp'
+                            MDLabel:
+                                text: 'Скорости смещения пункта:'
+                                
+                        MDTextField:
+                            id: ux
+                            hint_text: "uX, метр/год"
+                            text: '-0.0212'
+                        MDTextField:
+                            id: uy
+                            hint_text: "uY, метр/год"
+                            text: '0.0124'
+                        MDTextField:
+                            id: uz
+                            hint_text: "uZ, метр/год"
+                            text: '0.0072'
+                FloatLayout:
+                    BoxLayout:
+                        size_hint_y: None
+                        height: self.minimum_height
+                        pos_hint: {'top': 1, 'right': 1}
+                        orientation: 'vertical'
+                        padding: '10dp', '40dp', '60dp', '10dp'
+
+                        BoxLayout:
+                            padding: '0dp', '0dp', '0dp', '10dp'
+                            MDLabel:
+                                text: 'Вычислить координаты в СК 2 на дату:'
+                                
+                        MDTextField:
+                            id: t2
+                            hint_text: "t, гггг-мм-дд"
+                            text: '2020-03-11'
+            
+                        MDRaisedButton:
+                            text: 'Вычислить'
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+
+                            on_release: root.transforming(x0.text, y0.text, z0.text, t0.text, tp.text, dx.text, dy.text, dz.text, wx.text, wy.text, wz.text, m.text, ux.text, uy.text, uz.text, t2.text)
+        
+        MDSeparator:
+
+        BoxLayout:
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: '10dp'
+            padding: '60dp', '0dp', '60dp', '10dp'
+
+            MDLabel:
+                text: 'Координаты пункта в СК 2:'
+            MDTextField:
+                id: x2
+                hint_text: "X, м"
+            MDTextField:
+                id: y2
+                hint_text: "Y, м"
+            MDTextField:
+                id: z2
+                hint_text: "Z, м"
+        
